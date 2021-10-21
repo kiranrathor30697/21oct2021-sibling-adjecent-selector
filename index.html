@@ -9,49 +9,152 @@
             body{
                 margin: 0px;
                 background-color: #1D1D1D;
-                margin:100px auto;
                 color: #fff;
             }
-            div::after{
+            form{
+                width: 140px;
+                height: 90px;
+                background-color: #1D1D1D;
+                margin:20px auto;
+                padding: 10px;
+                position: relative;
+            }
+           
+            div > input{
+                border:none;
+                background-color: #2B2B2B;
+                width: 60px;
+                height: 15px;
+                font-size:5px;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            div > input ~ span::after{
                 content: "";
                 width: 0px;
-                height: 10px;
-                background-color: blue;
-                display: block;
+                height: 1px;
+                background-color: #08FDD8;
+                display: block ;
                 transition: all 0.3s linear;
+                position: absolute;
+               
             }
-            div:hover::after{
-                width: 40px;
+            div > input:focus ~ span::after{
+                /*content: "*";*/
+                width: 64px;
             }
-
-
-
+            input{
+                border:none;
+                background-color: #2B2B2B;
+                width: 92%;
+                height: 15px;
+                font-size:5px;
+                font-family: Arial, Helvetica, sans-serif;
+            }   
+            input:focus{
+                outline : none;
+                position: relative;
+                left: 0px;
+                top: 1px;
+                
+            }
             input ~ span::after{
                 content: "";
                 width: 0px;
-                height: 3px;
-                background-color: brown;
+                height: 1px;
+                background-color: #08FDD8;
                 display: block ;
-                transition: all 1s linear;
-
+                transition: all 0.3s linear;
+                position: absolute;
+               
             }
             input:focus ~ span::after{
                 /*content: "*";*/
-                width: 170px;
+                width: 133px;
+                color: #2B2B2B;
             }
-            
+            textarea{
+                border:none;
+                background-color: #2B2B2B;
+                width: 92%;
+                height: 15px;
+                font-size:5px;
+                font-family: Arial, Helvetica, sans-serif;
+                margin-top: 4px;
+            }
+            textarea:focus{
+                outline: none;
+            }
+            textarea::after{
+                content: "";
+                width: 0px;
+                height: 1px;
+                background-color: #08FDD8;
+                transition: all 0.3s linear;
+            }
+            textarea:focus::after{
+                width: 40px;
+            }
+            button{
+                width: 60px;
+                height: 20px;
+                border: 1px solid #08FDD8;
+                position: absolute;
+                top:87px;
+                right:16px;
+                background-color: transparent;
+                font-size: 6px;
+                color: #08FDD8;
+                overflow: hidden;
+            }
+            .btn > div{
+                width:70px;
+                height:20px;
+                background-color: #08FDD8;
+                position: absolute;
+                transform: skewX(-20deg);
+                top:0px;
+                left:-76px;
+                transition: all 0.6s linear;
+                z-index: 9000;
+            }
+            .btn:hover > div{
+                left: -4px;
+            }
+            .btn > span{
+                position: relative;
+                z-index: 10000;
+                transition: all 0.6s linear;
+            }
+            .btn:hover > span{
+                color: #2B2B2B;
+            }
         </style>
     </head>
     <body>
-        <form>
-           <input type="text">
-           <span></span>
+        <form> 
+            <div>
+                <input type="text" placeholder="Name">
+                <span></span>
+
+                <input type="email" placeholder="Email">
+                <span></span>
+            </div>
            
-            <div>Kiran </div>
+
+           <input type="text" placeholder="Subject">
+           <span></span>
+
+           <textarea name="msg" placeholder="Message"></textarea>
+
+           <button class="btn" type="submit" value="Send message!">
+              <span>Send message!</span>   
+            <div></div>
+           </button>
+           
         </form>
 
-
-
+        <br>
 
         <script>
 
@@ -73,9 +176,21 @@
 
 
 
+            /*
+             div::after{
+                content: "";
+                width: 0px;
+                height: 10px;
+                background-color: blue;
+                display: block;
+                transition: all 0.3s linear;
+            }
+            div:hover::after{
+                width: 40px;
+            }
+            */
 
-
-
+            /*<div>Kiran </div>*/  
 
             /* <input type="text">
             <span>a</span>
