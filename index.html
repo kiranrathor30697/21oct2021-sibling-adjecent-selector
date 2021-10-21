@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sibling & Adjecent Selector</title>
+        <style>
+            body{
+                margin: 0px;
+                background-color: #1D1D1D;
+                margin:100px auto;
+                color: #fff;
+            }
+            div::after{
+                content: "";
+                width: 0px;
+                height: 10px;
+                background-color: blue;
+                display: block;
+                transition: all 0.3s linear;
+            }
+            div:hover::after{
+                width: 40px;
+            }
+
+
+
+            input ~ span::after{
+                content: "";
+                width: 0px;
+                height: 3px;
+                background-color: brown;
+                display: block ;
+                transition: all 1s linear;
+
+            }
+            input:focus ~ span::after{
+                /*content: "*";*/
+                width: 170px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <form>
+           <input type="text">
+           <span></span>
+           
+            <div>Kiran </div>
+        </form>
+
+
+
+
+        <script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            /* <input type="text">
+            <span>a</span>
+            
+            
+            
+            
+            input span::after{
+                width: 100px;
+                height: 100px;
+                background-color: aqua;
+                display: block;
+            }*/
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
